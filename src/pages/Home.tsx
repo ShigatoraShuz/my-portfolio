@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "components/Header";
-import ProjectCard from "components/src/components/ProjectCard";
-import { projects, Project } from "data/projects";
+import Header from "../components/Header";
+import ProjectCard from "../components/ProjectCard";
+import { projects } from "../data/projects";
 
 const Home: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const Home: React.FC = () => {
       <section id="projects" className="max-w-5xl mx-auto p-8">
         <h2 className="text-3xl font-retro text-neonPink mb-6">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project: Project) => (
+          {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
