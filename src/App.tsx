@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from './contexts/ThemeContext';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-black">
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <section id="skills" className="min-h-screen py-32 flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-5xl font-black bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent mb-8">
+              Skills
+            </h2>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+              Skills section with animated charts coming soon.
+            </p>
+          </div>
+        </section>
+        <section id="contact" className="min-h-screen py-32 flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-5xl font-black bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent mb-8">
+              Contact
+            </h2>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+              Contact form and social links coming soon.
+            </p>
+          </div>
+        </section>
+      </div>
+    </ThemeProvider>
   );
 }
 
 export default App;
+
